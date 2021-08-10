@@ -1,0 +1,1920 @@
+{
+  "$type": "OpenBots.Core.Script.Script, OpenBots.Core",
+  "Commands": [
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Variable.SetVariableCommand, OpenBots.Commands.Core",
+        "v_Input": "ProjectPath + @\"/challenge.xlsx\"",
+        "v_OutputUserVariableName": "vExcelFilePath",
+        "CommandID": "1cc451a4-9761-4717-a7e4-9993c696f888",
+        "CommandName": "SetVariableCommand",
+        "SelectionName": "Set Variable",
+        "LineNumber": 1,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Misc.AddCodeCommentCommand, OpenBots.Commands.Core",
+        "CommandID": "acd564b8-5bf5-418d-b635-e01a4b0063b9",
+        "CommandName": "AddCodeCommentCommand",
+        "SelectionName": "Add Code Comment",
+        "LineNumber": 2,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": "Download Excel file"
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "RenecCommands.DownloadCommand, RenecCommands",
+        "v_DownloadLink": "vDownloadLink",
+        "v_SaveFullPath": "vExcelFilePath",
+        "v_Result": "vResult",
+        "CommandID": "42e5cf00-248b-4be4-a4b9-cef422cdba34",
+        "CommandName": "DownloadCommand",
+        "SelectionName": "Download Command",
+        "LineNumber": 3,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Excel.ExcelCreateApplicationCommand, OpenBots.Commands.Microsoft",
+        "v_InstanceName": "vExcelApp1",
+        "v_NewOpenWorkbook": "Open Workbook",
+        "v_FilePath": "vExcelFilePath",
+        "v_Visible": "Yes",
+        "v_CloseAllInstances": "Yes",
+        "CommandID": "b6ff4535-b23b-4134-895a-c15ac4ccf687",
+        "CommandName": "ExcelCreateApplicationCommand",
+        "SelectionName": "Create Excel Application",
+        "LineNumber": 4,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Misc.AddCodeCommentCommand, OpenBots.Commands.Core",
+        "CommandID": "72c44620-2355-485f-9194-2cfcf4a55cf7",
+        "CommandName": "AddCodeCommentCommand",
+        "SelectionName": "Add Code Comment",
+        "LineNumber": 5,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": "Trim B1 (Last Name )"
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Excel.ExcelGetCellCommand, OpenBots.Commands.Microsoft",
+        "v_InstanceName": "vExcelApp1",
+        "v_CellLocation": "\"B1\"",
+        "v_Formulas": "No",
+        "v_OutputUserVariableName": "vCellString",
+        "CommandID": "8f23af62-7281-44b6-8aa1-ecf9ebc17553",
+        "CommandName": "ExcelGetCellCommand",
+        "SelectionName": "Get Cell",
+        "LineNumber": 6,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Variable.SetVariableCommand, OpenBots.Commands.Core",
+        "v_Input": "vCellString.Trim()",
+        "v_OutputUserVariableName": "vCellString",
+        "CommandID": "231521da-c8c6-4c21-ba9a-b9a29b16e004",
+        "CommandName": "SetVariableCommand",
+        "SelectionName": "Set Variable",
+        "LineNumber": 7,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Excel.ExcelWriteCellCommand, OpenBots.Commands.Microsoft",
+        "v_InstanceName": "vExcelApp1",
+        "v_TextToSet": "vCellString",
+        "v_CellLocation": "\"B1\"",
+        "CommandID": "bd233fa5-0343-44c7-8c79-a86632c0ab6a",
+        "CommandName": "ExcelWriteCellCommand",
+        "SelectionName": "Write Cell",
+        "LineNumber": 8,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Excel.ExcelGetLastRowIndexCommand, OpenBots.Commands.Microsoft",
+        "v_InstanceName": "vExcelApp1",
+        "v_ColumnLetter": "\"A\"",
+        "v_OutputUserVariableName": "vLastRow",
+        "CommandID": "595d1176-4d52-4c0a-84ce-90c863528c7f",
+        "CommandName": "ExcelGetLastRowIndexCommand",
+        "SelectionName": "Get Last Row Index",
+        "LineNumber": 9,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Misc.ShowMessageCommand, OpenBots.Commands.Core",
+        "v_Message": "\"Last Row \" +VLastRow",
+        "v_AutoCloseAfter": "30",
+        "CommandID": "85fd2bae-2b90-4313-9080-c04eb6e9ed54",
+        "CommandName": "ShowMessageCommand",
+        "SelectionName": "Show Message",
+        "LineNumber": 10,
+        "IsCommented": true,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Misc.AddCodeCommentCommand, OpenBots.Commands.Core",
+        "CommandID": "ed46f627-78ab-44b2-970b-3a37e27cd871",
+        "CommandName": "AddCodeCommentCommand",
+        "SelectionName": "Add Code Comment",
+        "LineNumber": 11,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": "Get data from Excel file"
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Excel.ExcelGetRangeCommand, OpenBots.Commands.Microsoft",
+        "v_InstanceName": "vExcelApp1",
+        "v_Range": "\"A1:G\"+vLastRow",
+        "v_AddHeaders": "Yes",
+        "v_Formulas": "No",
+        "v_OutputUserVariableName": "vDataTable",
+        "CommandID": "280b1bb9-6890-4122-bbda-8a6fa89971e2",
+        "CommandName": "ExcelGetRangeCommand",
+        "SelectionName": "Get Range",
+        "LineNumber": 12,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Excel.ExcelCloseApplicationCommand, OpenBots.Commands.Microsoft",
+        "v_InstanceName": "vExcelApp1",
+        "v_ExcelSaveOnExit": "Yes",
+        "CommandID": "a4eee0d7-04e8-40e2-a8d0-031c7d9e1bbc",
+        "CommandName": "ExcelCloseApplicationCommand",
+        "SelectionName": "Close Excel Application",
+        "LineNumber": 13,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.File.DeleteFileCommand, OpenBots.Commands.SystemAutomation",
+        "v_SourceFilePath": "vExcelFilePath",
+        "CommandID": "7ab4e5a4-f73d-4391-9912-6f429ab3c054",
+        "CommandName": "DeleteFileCommand",
+        "SelectionName": "Delete File",
+        "LineNumber": 14,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Misc.AddCodeCommentCommand, OpenBots.Commands.Core",
+        "CommandID": "9f2db249-992d-42ea-ada8-3fba2c51d46b",
+        "CommandName": "AddCodeCommentCommand",
+        "SelectionName": "Add Code Comment",
+        "LineNumber": 15,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": "Remeber to replace chromedriver.exe  in Studio folder\r\n with  version for your Chrome browser\r\n  https://chromedriver.chromium.org/downloads"
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.WebBrowser.SeleniumCreateBrowserCommand, OpenBots.Commands.UIAutomation",
+        "v_InstanceName": "vBrowser",
+        "v_EngineType": "Chrome",
+        "v_URL": "\"http://rpachallenge.com\"",
+        "v_BrowserWindowOption": "Normal",
+        "v_SeleniumOptions": null,
+        "CommandID": "3ee2a084-f23d-4f9f-9656-e65ffcbf611a",
+        "CommandName": "SeleniumCreateBrowserCommand",
+        "SelectionName": "Selenium Create Browser",
+        "LineNumber": 16,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+        "v_InstanceName": "vBrowser",
+        "v_SeleniumSearchParameters": [
+          {
+            "Enabled": "True",
+            "Parameter Name": "\"XPath\"",
+            "Parameter Value": "\"//button[text()='Start']\""
+          },
+          {
+            "Enabled": "False",
+            "Parameter Name": "\"ID\"",
+            "Parameter Value": "\"\""
+          },
+          {
+            "Enabled": "False",
+            "Parameter Name": "\"Name\"",
+            "Parameter Value": "\"\""
+          },
+          {
+            "Enabled": "True",
+            "Parameter Name": "\"Tag Name\"",
+            "Parameter Value": "\"BUTTON\""
+          },
+          {
+            "Enabled": "False",
+            "Parameter Name": "\"Class Name\"",
+            "Parameter Value": "\"waves-effect col s12 m12 l12 btn-large uiColorButton\""
+          },
+          {
+            "Enabled": "False",
+            "Parameter Name": "\"Link Text\"",
+            "Parameter Value": "\"\""
+          },
+          {
+            "Enabled": "False",
+            "Parameter Name": "\"CSS Selector 1\"",
+            "Parameter Value": "\"button[_ngcontent-c1='']\""
+          },
+          {
+            "Enabled": "False",
+            "Parameter Name": "\"CSS Selector 2\"",
+            "Parameter Value": "\"button[class='waves-effect col s12 m12 l12 btn-large uiColorButton']\""
+          },
+          {
+            "Enabled": "False",
+            "Parameter Name": "\"CSS Selector 3\"",
+            "Parameter Value": "\"button[id='']\""
+          }
+        ],
+        "v_SeleniumSearchOption": "Find Element",
+        "v_SeleniumElementAction": "Left Click",
+        "v_WebActionParameterTable": [],
+        "v_Timeout": "30",
+        "CommandID": "d60fff61-95e9-40e6-966d-affb95b94741",
+        "CommandName": "SeleniumElementActionCommand",
+        "SelectionName": "Selenium Element Action",
+        "LineNumber": 17,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Loop.LoopCollectionCommand, OpenBots.Commands.Core",
+        "v_LoopParameter": "vDataTable.Rows",
+        "v_OutputUserVariableName": "vDataRow",
+        "CommandID": "20451ce8-5b89-49be-8c04-3b0728b8b93f",
+        "CommandName": "LoopCollectionCommand",
+        "SelectionName": "Loop Collection",
+        "LineNumber": 18,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": true,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": [
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+            "v_InstanceName": "vBrowser",
+            "v_SeleniumSearchParameters": [
+              {
+                "Enabled": null,
+                "Parameter Name": "\"XPath\"",
+                "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[3]/rpa1-field/div/input\""
+              },
+              {
+                "Enabled": null,
+                "Parameter Name": "\"ID\"",
+                "Parameter Value": "\"Hpy1i\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Name\"",
+                "Parameter Value": "\"Hpy1i\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"Tag Name\"",
+                "Parameter Value": "\"INPUT\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Class Name\"",
+                "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Link Text\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 1\"",
+                "Parameter Value": "\"input[_ngcontent-c2='']\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"CSS Selector 2\"",
+                "Parameter Value": "\"input[ng-reflect-name='labelFirstName']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 3\"",
+                "Parameter Value": "\"input[id='Hpy1i']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 4\"",
+                "Parameter Value": "\"input[name='Hpy1i']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 5\"",
+                "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+              }
+            ],
+            "v_SeleniumSearchOption": "Find Element",
+            "v_SeleniumElementAction": "Set Text",
+            "v_WebActionParameterTable": [
+              {
+                "Parameter Name": "Text To Set",
+                "Parameter Value": "vDataRow[\"First Name\"].ToString()"
+              },
+              {
+                "Parameter Name": "Clear Element Before Setting Text",
+                "Parameter Value": "Yes"
+              }
+            ],
+            "v_Timeout": "30",
+            "CommandID": "ab8a746e-4dcf-4eaa-b798-04f264c56764",
+            "CommandName": "SeleniumElementActionCommand",
+            "SelectionName": "Selenium Element Action",
+            "LineNumber": 19,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+            "v_InstanceName": "vBrowser",
+            "v_SeleniumSearchParameters": [
+              {
+                "Enabled": null,
+                "Parameter Name": "\"XPath\"",
+                "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[4]/rpa1-field/div/input\""
+              },
+              {
+                "Enabled": null,
+                "Parameter Name": "\"ID\"",
+                "Parameter Value": "\"a5v0h\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Name\"",
+                "Parameter Value": "\"a5v0h\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"Tag Name\"",
+                "Parameter Value": "\"INPUT\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Class Name\"",
+                "Parameter Value": "\"ng-pristine ng-invalid ng-touched\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Link Text\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 1\"",
+                "Parameter Value": "\"input[_ngcontent-c2='']\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"CSS Selector 2\"",
+                "Parameter Value": "\"input[ng-reflect-name='labelLastName']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 3\"",
+                "Parameter Value": "\"input[id='a5v0h']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 4\"",
+                "Parameter Value": "\"input[name='a5v0h']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 5\"",
+                "Parameter Value": "\"input[class='ng-pristine ng-invalid ng-touched']\""
+              }
+            ],
+            "v_SeleniumSearchOption": "Find Element",
+            "v_SeleniumElementAction": "Set Text",
+            "v_WebActionParameterTable": [
+              {
+                "Parameter Name": "Text To Set",
+                "Parameter Value": "vDataRow[\"Last Name\"].ToString()"
+              },
+              {
+                "Parameter Name": "Clear Element Before Setting Text",
+                "Parameter Value": "Yes"
+              }
+            ],
+            "v_Timeout": "30",
+            "CommandID": "e17c6049-8183-4643-ad04-86594c8dfde9",
+            "CommandName": "SeleniumElementActionCommand",
+            "SelectionName": "Selenium Element Action",
+            "LineNumber": 20,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+            "v_InstanceName": "vBrowser",
+            "v_SeleniumSearchParameters": [
+              {
+                "Enabled": null,
+                "Parameter Name": "\"XPath\"",
+                "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div/rpa1-field/div/input\""
+              },
+              {
+                "Enabled": null,
+                "Parameter Name": "\"ID\"",
+                "Parameter Value": "\"mEQJc\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Name\"",
+                "Parameter Value": "\"mEQJc\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"Tag Name\"",
+                "Parameter Value": "\"INPUT\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Class Name\"",
+                "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Link Text\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 1\"",
+                "Parameter Value": "\"input[_ngcontent-c2='']\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"CSS Selector 2\"",
+                "Parameter Value": "\"input[ng-reflect-name='labelCompanyName']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 3\"",
+                "Parameter Value": "\"input[id='mEQJc']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 4\"",
+                "Parameter Value": "\"input[name='mEQJc']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 5\"",
+                "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+              }
+            ],
+            "v_SeleniumSearchOption": "Find Element",
+            "v_SeleniumElementAction": "Set Text",
+            "v_WebActionParameterTable": [
+              {
+                "Parameter Name": "Text To Set",
+                "Parameter Value": "vDataRow[\"Company Name\"].ToString()"
+              },
+              {
+                "Parameter Name": "Clear Element Before Setting Text",
+                "Parameter Value": "Yes"
+              }
+            ],
+            "v_Timeout": "30",
+            "CommandID": "d972747d-0fc8-4543-87ae-55e279ad3d10",
+            "CommandName": "SeleniumElementActionCommand",
+            "SelectionName": "Selenium Element Action",
+            "LineNumber": 21,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+            "v_InstanceName": "vBrowser",
+            "v_SeleniumSearchParameters": [
+              {
+                "Enabled": null,
+                "Parameter Name": "\"XPath\"",
+                "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[2]/rpa1-field/div/input\""
+              },
+              {
+                "Enabled": null,
+                "Parameter Name": "\"ID\"",
+                "Parameter Value": "\"m9c2k\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Name\"",
+                "Parameter Value": "\"m9c2k\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"Tag Name\"",
+                "Parameter Value": "\"INPUT\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Class Name\"",
+                "Parameter Value": "\"ng-pristine ng-invalid ng-touched\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Link Text\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 1\"",
+                "Parameter Value": "\"input[_ngcontent-c2='']\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"CSS Selector 2\"",
+                "Parameter Value": "\"input[ng-reflect-name='labelRole']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 3\"",
+                "Parameter Value": "\"input[id='m9c2k']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 4\"",
+                "Parameter Value": "\"input[name='m9c2k']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 5\"",
+                "Parameter Value": "\"input[class='ng-pristine ng-invalid ng-touched']\""
+              }
+            ],
+            "v_SeleniumSearchOption": "Find Element",
+            "v_SeleniumElementAction": "Set Text",
+            "v_WebActionParameterTable": [
+              {
+                "Parameter Name": "Text To Set",
+                "Parameter Value": "vDataRow[\"Role in Company\"].ToString()"
+              },
+              {
+                "Parameter Name": "Clear Element Before Setting Text",
+                "Parameter Value": "Yes"
+              }
+            ],
+            "v_Timeout": "30",
+            "CommandID": "61077793-cd18-4d01-8409-d36eb6f37488",
+            "CommandName": "SeleniumElementActionCommand",
+            "SelectionName": "Selenium Element Action",
+            "LineNumber": 22,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+            "v_InstanceName": "vBrowser",
+            "v_SeleniumSearchParameters": [
+              {
+                "Enabled": null,
+                "Parameter Name": "\"XPath\"",
+                "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[5]/rpa1-field/div/input\""
+              },
+              {
+                "Enabled": null,
+                "Parameter Name": "\"ID\"",
+                "Parameter Value": "\"0Gq3M\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Name\"",
+                "Parameter Value": "\"0Gq3M\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"Tag Name\"",
+                "Parameter Value": "\"INPUT\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Class Name\"",
+                "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Link Text\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 1\"",
+                "Parameter Value": "\"input[_ngcontent-c2='']\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"CSS Selector 2\"",
+                "Parameter Value": "\"input[ng-reflect-name='labelAddress']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 3\"",
+                "Parameter Value": "\"input[id='0Gq3M']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 4\"",
+                "Parameter Value": "\"input[name='0Gq3M']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 5\"",
+                "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+              }
+            ],
+            "v_SeleniumSearchOption": "Find Element",
+            "v_SeleniumElementAction": "Set Text",
+            "v_WebActionParameterTable": [
+              {
+                "Parameter Name": "Text To Set",
+                "Parameter Value": "vDataRow[\"Address\"].ToString()"
+              },
+              {
+                "Parameter Name": "Clear Element Before Setting Text",
+                "Parameter Value": "Yes"
+              }
+            ],
+            "v_Timeout": "30",
+            "CommandID": "34118fb4-faf8-4c16-a499-6eb1bbc65c81",
+            "CommandName": "SeleniumElementActionCommand",
+            "SelectionName": "Selenium Element Action",
+            "LineNumber": 23,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+            "v_InstanceName": "vBrowser",
+            "v_SeleniumSearchParameters": [
+              {
+                "Enabled": null,
+                "Parameter Name": "\"XPath\"",
+                "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[7]/rpa1-field/div/input\""
+              },
+              {
+                "Enabled": null,
+                "Parameter Name": "\"ID\"",
+                "Parameter Value": "\"yoBLC\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Name\"",
+                "Parameter Value": "\"yoBLC\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"Tag Name\"",
+                "Parameter Value": "\"INPUT\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Class Name\"",
+                "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Link Text\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 1\"",
+                "Parameter Value": "\"input[_ngcontent-c2='']\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"CSS Selector 2\"",
+                "Parameter Value": "\"input[ng-reflect-name='labelEmail']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 3\"",
+                "Parameter Value": "\"input[id='yoBLC']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 4\"",
+                "Parameter Value": "\"input[name='yoBLC']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 5\"",
+                "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+              }
+            ],
+            "v_SeleniumSearchOption": "Find Element",
+            "v_SeleniumElementAction": "Set Text",
+            "v_WebActionParameterTable": [
+              {
+                "Parameter Name": "Text To Set",
+                "Parameter Value": "vDataRow[\"Email\"].ToString()"
+              },
+              {
+                "Parameter Name": "Clear Element Before Setting Text",
+                "Parameter Value": "Yes"
+              }
+            ],
+            "v_Timeout": "30",
+            "CommandID": "e4656e82-b12c-44c8-bb6a-38ea4349e133",
+            "CommandName": "SeleniumElementActionCommand",
+            "SelectionName": "Selenium Element Action",
+            "LineNumber": 24,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+            "v_InstanceName": "vBrowser",
+            "v_SeleniumSearchParameters": [
+              {
+                "Enabled": null,
+                "Parameter Name": "\"XPath\"",
+                "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[6]/rpa1-field/div/input\""
+              },
+              {
+                "Enabled": null,
+                "Parameter Name": "\"ID\"",
+                "Parameter Value": "\"emYyy\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Name\"",
+                "Parameter Value": "\"emYyy\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"Tag Name\"",
+                "Parameter Value": "\"INPUT\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Class Name\"",
+                "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Link Text\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 1\"",
+                "Parameter Value": "\"input[_ngcontent-c2='']\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"CSS Selector 2\"",
+                "Parameter Value": "\"input[ng-reflect-name='labelPhone']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 3\"",
+                "Parameter Value": "\"input[id='emYyy']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 4\"",
+                "Parameter Value": "\"input[name='emYyy']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 5\"",
+                "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+              }
+            ],
+            "v_SeleniumSearchOption": "Find Element",
+            "v_SeleniumElementAction": "Set Text",
+            "v_WebActionParameterTable": [
+              {
+                "Parameter Name": "Text To Set",
+                "Parameter Value": "vDataRow[\"Phone Number\"].ToString()"
+              },
+              {
+                "Parameter Name": "Clear Element Before Setting Text",
+                "Parameter Value": "Yes"
+              }
+            ],
+            "v_Timeout": "30",
+            "CommandID": "1813bbc3-e6f1-4034-9f77-f310b40e300f",
+            "CommandName": "SeleniumElementActionCommand",
+            "SelectionName": "Selenium Element Action",
+            "LineNumber": 25,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.Misc.AddCodeCommentCommand, OpenBots.Commands.Core",
+            "CommandID": "451cec60-0459-4e31-82ba-8295070c127f",
+            "CommandName": "AddCodeCommentCommand",
+            "SelectionName": "Add Code Comment",
+            "LineNumber": 26,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": "Click Submit"
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.WebBrowser.SeleniumElementActionCommand, OpenBots.Commands.UIAutomation",
+            "v_InstanceName": "vBrowser",
+            "v_SeleniumSearchParameters": [
+              {
+                "Enabled": null,
+                "Parameter Name": "\"XPath\"",
+                "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/input\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"ID\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Name\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"Tag Name\"",
+                "Parameter Value": "\"INPUT\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Class Name\"",
+                "Parameter Value": "\"btn uiColorButton\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"Link Text\"",
+                "Parameter Value": "\"\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 1\"",
+                "Parameter Value": "\"input[type='submit']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 2\"",
+                "Parameter Value": "\"input[_ngcontent-c1='']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 3\"",
+                "Parameter Value": "\"input[class='btn uiColorButton']\""
+              },
+              {
+                "Enabled": "True",
+                "Parameter Name": "\"CSS Selector 4\"",
+                "Parameter Value": "\"input[value='Submit']\""
+              },
+              {
+                "Enabled": "False",
+                "Parameter Name": "\"CSS Selector 5\"",
+                "Parameter Value": "\"input[id='']\""
+              }
+            ],
+            "v_SeleniumSearchOption": "Find Element",
+            "v_SeleniumElementAction": "Left Click",
+            "v_WebActionParameterTable": [],
+            "v_Timeout": "30",
+            "CommandID": "eb7ee9c3-af5c-4a0a-9f5c-6de57a16aab0",
+            "CommandName": "SeleniumElementActionCommand",
+            "SelectionName": "Selenium Element Action",
+            "LineNumber": 27,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.Misc.AddCodeCommentCommand, OpenBots.Commands.Core",
+            "CommandID": "6111fe15-9b47-4859-b9a3-c54d3d084691",
+            "CommandName": "AddCodeCommentCommand",
+            "SelectionName": "Add Code Comment",
+            "LineNumber": 28,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": "Items in this section will run within the loop"
+          },
+          "AdditionalScriptCommands": null
+        },
+        {
+          "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+          "ScriptCommand": {
+            "$type": "OpenBots.Commands.Loop.EndLoopCommand, OpenBots.Commands.Core",
+            "CommandID": "6775b4dc-01cc-4cf0-99c2-a6e2e66d807e",
+            "CommandName": "EndLoopCommand",
+            "SelectionName": "End Loop",
+            "LineNumber": 29,
+            "IsCommented": false,
+            "PauseBeforeExecution": false,
+            "CommandEnabled": true,
+            "ScopeStartCommand": false,
+            "v_IsPrivate": false,
+            "v_ErrorHandling": "None",
+            "v_Comment": null
+          },
+          "AdditionalScriptCommands": null
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.Engine.PauseScriptCommand, OpenBots.Commands.Core",
+        "v_PauseLength": "10000",
+        "CommandID": "847bf123-afd0-429c-b7af-718fea481b19",
+        "CommandName": "PauseScriptCommand",
+        "SelectionName": "Pause Script",
+        "LineNumber": 30,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": "Check result"
+      },
+      "AdditionalScriptCommands": null
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptAction, OpenBots.Core",
+      "ScriptCommand": {
+        "$type": "OpenBots.Commands.WebBrowser.SeleniumCloseBrowserCommand, OpenBots.Commands.UIAutomation",
+        "v_InstanceName": "vBrowser",
+        "CommandID": "2557f9e3-b120-42a8-8dcc-d561cb4755c3",
+        "CommandName": "SeleniumCloseBrowserCommand",
+        "SelectionName": "Selenium Close Browser",
+        "LineNumber": 31,
+        "IsCommented": false,
+        "PauseBeforeExecution": false,
+        "CommandEnabled": true,
+        "ScopeStartCommand": false,
+        "v_IsPrivate": false,
+        "v_ErrorHandling": "None",
+        "v_Comment": null
+      },
+      "AdditionalScriptCommands": null
+    }
+  ],
+  "Variables": [
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "ProjectPath",
+      "VariableType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": "\"Value Provided at Runtime\""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vCellString",
+      "VariableType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": "\"\""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vBrowser",
+      "VariableType": "OpenBots.Core.Model.ApplicationModel.OBAppInstance, OpenBots.Core, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null",
+      "VariableValue": ""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vDataRow",
+      "VariableType": "System.Data.DataRow, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": ""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vDataTable",
+      "VariableType": "System.Data.DataTable, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": ""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vDownloadLink",
+      "VariableType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": "\"http://rpachallenge.com/assets/downloadFiles/challenge.xlsx\""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vExcelApp1",
+      "VariableType": "OpenBots.Core.Model.ApplicationModel.OBAppInstance, OpenBots.Core, Version=1.5.1.0, Culture=neutral, PublicKeyToken=null",
+      "VariableValue": ""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vExcelFilePath",
+      "VariableType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": "\"\""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vLastRow",
+      "VariableType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": ""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "vResult",
+      "VariableType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": ""
+    }
+  ],
+  "Arguments": [],
+  "Elements": [
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "eCompanyName",
+      "ElementValue": [
+        {
+          "Enabled": null,
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div/rpa1-field/div/input\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"mEQJc\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"mEQJc\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"INPUT\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"input[_ngcontent-c2='']\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"input[ng-reflect-name='labelCompanyName']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"input[id='mEQJc']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 4\"",
+          "Parameter Value": "\"input[name='mEQJc']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 5\"",
+          "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "eRole",
+      "ElementValue": [
+        {
+          "Enabled": null,
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[2]/rpa1-field/div/input\""
+        },
+        {
+          "Enabled": null,
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"m9c2k\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"m9c2k\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"INPUT\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"ng-pristine ng-invalid ng-touched\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"input[_ngcontent-c2='']\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"input[ng-reflect-name='labelRole']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"input[id='m9c2k']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 4\"",
+          "Parameter Value": "\"input[name='m9c2k']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 5\"",
+          "Parameter Value": "\"input[class='ng-pristine ng-invalid ng-touched']\""
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "FirstName",
+      "ElementValue": [
+        {
+          "Enabled": null,
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[3]/rpa1-field/div/input\""
+        },
+        {
+          "Enabled": null,
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"Hpy1i\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"Hpy1i\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"INPUT\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"input[_ngcontent-c2='']\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"input[ng-reflect-name='labelFirstName']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"input[id='Hpy1i']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 4\"",
+          "Parameter Value": "\"input[name='Hpy1i']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 5\"",
+          "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "eLastName",
+      "ElementValue": [
+        {
+          "Enabled": null,
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[4]/rpa1-field/div/input\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"a5v0h\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"a5v0h\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"INPUT\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"ng-pristine ng-invalid ng-touched\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"input[_ngcontent-c2='']\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"input[ng-reflect-name='labelLastName']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"input[id='a5v0h']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 4\"",
+          "Parameter Value": "\"input[name='a5v0h']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 5\"",
+          "Parameter Value": "\"input[class='ng-pristine ng-invalid ng-touched']\""
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "eAddress",
+      "ElementValue": [
+        {
+          "Enabled": null,
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[5]/rpa1-field/div/input\""
+        },
+        {
+          "Enabled": null,
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"0Gq3M\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"0Gq3M\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"INPUT\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"input[_ngcontent-c2='']\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"input[ng-reflect-name='labelAddress']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"input[id='0Gq3M']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 4\"",
+          "Parameter Value": "\"input[name='0Gq3M']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 5\"",
+          "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "ePhone",
+      "ElementValue": [
+        {
+          "Enabled": null,
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[6]/rpa1-field/div/input\""
+        },
+        {
+          "Enabled": null,
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"emYyy\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"emYyy\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"INPUT\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"input[_ngcontent-c2='']\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"input[ng-reflect-name='labelPhone']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"input[id='emYyy']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 4\"",
+          "Parameter Value": "\"input[name='emYyy']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 5\"",
+          "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "eEmail",
+      "ElementValue": [
+        {
+          "Enabled": null,
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[7]/rpa1-field/div/input\""
+        },
+        {
+          "Enabled": null,
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"yoBLC\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"yoBLC\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"INPUT\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"ng-untouched ng-pristine ng-invalid\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"input[_ngcontent-c2='']\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"input[ng-reflect-name='labelEmail']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"input[id='yoBLC']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 4\"",
+          "Parameter Value": "\"input[name='yoBLC']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 5\"",
+          "Parameter Value": "\"input[class='ng-untouched ng-pristine ng-invalid']\""
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "eStart",
+      "ElementValue": [
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"//button[text()='Start']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"BUTTON\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"waves-effect col s12 m12 l12 btn-large uiColorButton\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"button[_ngcontent-c1='']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"button[class='waves-effect col s12 m12 l12 btn-large uiColorButton']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"button[id='']\""
+        }
+      ]
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptElement, OpenBots.Core",
+      "ElementName": "submit",
+      "ElementValue": [
+        {
+          "Enabled": null,
+          "Parameter Name": "\"XPath\"",
+          "Parameter Value": "\"/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/input\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"ID\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Name\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"Tag Name\"",
+          "Parameter Value": "\"INPUT\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Class Name\"",
+          "Parameter Value": "\"btn uiColorButton\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"Link Text\"",
+          "Parameter Value": "\"\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 1\"",
+          "Parameter Value": "\"input[type='submit']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 2\"",
+          "Parameter Value": "\"input[_ngcontent-c1='']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 3\"",
+          "Parameter Value": "\"input[class='btn uiColorButton']\""
+        },
+        {
+          "Enabled": "True",
+          "Parameter Name": "\"CSS Selector 4\"",
+          "Parameter Value": "\"input[value='Submit']\""
+        },
+        {
+          "Enabled": "False",
+          "Parameter Name": "\"CSS Selector 5\"",
+          "Parameter Value": "\"input[id='']\""
+        }
+      ]
+    }
+  ],
+  "ImportedNamespaces": {
+    "$type": "System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[OpenBots.Core.Script.AssemblyReference, OpenBots.Core]], mscorlib]], mscorlib",
+    "Microsoft.Office.Interop.Outlook": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "Microsoft.Office.Interop.Outlook",
+        "AssemblyVersion": "15.0.0.0"
+      }
+    ],
+    "MimeKit": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "MimeKit",
+        "AssemblyVersion": "2.12.0.0"
+      }
+    ],
+    "OpenBots.Core.Model.ApplicationModel": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "OpenBots.Core",
+        "AssemblyVersion": "1.5.1.0"
+      }
+    ],
+    "System": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "mscorlib",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Collections.Generic": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "mscorlib",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Data": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "System.Data",
+        "AssemblyVersion": "4.0.0.0"
+      },
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "System.Data.DataSetExtensions",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Drawing": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "System.Drawing",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Linq": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "System.Core",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Security": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "mscorlib",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Text": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "mscorlib",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Text.RegularExpressions": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "System",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Threading.Tasks": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "mscorlib",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ],
+    "System.Windows.Forms": [
+      {
+        "$type": "OpenBots.Core.Script.AssemblyReference, OpenBots.Core",
+        "AssemblyName": "System.Windows.Forms",
+        "AssemblyVersion": "4.0.0.0"
+      }
+    ]
+  },
+  "Version": "1.5.1.0"
+}
