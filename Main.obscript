@@ -35,7 +35,7 @@
         "ScopeStartCommand": false,
         "v_IsPrivate": false,
         "v_ErrorHandling": "None",
-        "v_Comment": "Download Excel file"
+        "v_Comment": "Download Excel file. You must be able to save the file ( not opened, ... )"
       },
       "AdditionalScriptCommands": null
     },
@@ -1189,7 +1189,7 @@
         "ScopeStartCommand": false,
         "v_IsPrivate": false,
         "v_ErrorHandling": "None",
-        "v_Comment": "Check result"
+        "v_Comment": "Check Result ( is 10 sec enough? )"
       },
       "AdditionalScriptCommands": null
     },
@@ -1214,12 +1214,6 @@
     }
   ],
   "Variables": [
-    {
-      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
-      "VariableName": "ProjectPath",
-      "VariableType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-      "VariableValue": "\"Value Provided at Runtime\""
-    },
     {
       "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
       "VariableName": "vCellString",
@@ -1273,6 +1267,12 @@
       "VariableName": "vResult",
       "VariableType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
       "VariableValue": ""
+    },
+    {
+      "$type": "OpenBots.Core.Script.ScriptVariable, OpenBots.Core",
+      "VariableName": "ProjectPath",
+      "VariableType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "VariableValue": "\"Value Provided at Runtime\""
     }
   ],
   "Arguments": [],
